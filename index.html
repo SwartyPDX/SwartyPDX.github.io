@@ -1,15 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Lobster&display=swap"
+        rel="stylesheet">
     <link rel="shortcut icon" href="/static/t4r.ico">
 
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-indent: 0;
+        }
+
+        .s1 {
+            font-family: Arial, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 24pt;
+        }
+
+        .p  {
+            font-family: Arial, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 10pt;
+            margin: 0pt;
+        }
+
+        .s2 {
+            font-family: "Times New Roman", serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 10pt;
+        }
+
+        .a {
+            font-family: Arial, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 10pt;
+        }
+
+        .s3 {
+            font-family: "Times New Roman", serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 10pt;
+        }
+
+        .s4 {
+            color: #0073B1;
+            font-family: Arial, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 10pt;
+        }
+
+        .h2 {
+            font-family: Arial, sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 20pt;
+        }
+
+        .s5 {
+            font-family: Arial, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 12pt;
+        }
+
+        .s6 {
+            font-family: "Adobe Myungjo Std M", serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 10pt;
+        }
+
         body {
             margin: 0;
             /* font-family: 'Fredericka the Great', cursive; */
@@ -17,22 +99,32 @@
             background: #0d0a38;
         }
 
-        section {
+        .circle {
+            border-radius: 50%;
+        }
+        .co-icon {
+            width: 100px
+        }
+
+        .ctrsection {
             position: relative;
-            display:flex;
+            display: flex;
             flex-direction: column;
             align-items: center;
             min-height: 400px;
             padding: 100px 20vw;
         }
+
         h1 {
             margin: 0;
             font-family: 'Lobster', cursive;
-            color: rgb(255, 255, 255);    
+            color: rgb(255, 255, 255);
         }
+
         .blue {
-            background: rgb(10, 10, 200);
+            background: #06066e;
         }
+
         .bluewave {
             position: absolute;
             top: 0;
@@ -50,8 +142,9 @@
         }
 
         .bluewave .shape-fill {
-            fill: #0A0AC8;
+            fill: #06066e;
         }
+
         .redwav-top {
             position: absolute;
             bottom: 0;
@@ -70,71 +163,251 @@
         }
 
         .redwav-top .shape-fill {
-            fill: #BF0000;
+            fill: #330000;
         }
+
         .red {
-            background: #BF0000;
+            background: #330000;
         }
+
         .pink {
             background: pink;
         }
+
         .dark {
             background: #0f0f10;
         }
-        
+        footer {
+            height:30px
+        }
     </style>
 
 
     <title>Document</title>
 </head>
+
 <body>
-    <section class="blue">
-        <h1>A Swarty of all trades</h1>
-        <p>I enjoy a varied life of of many interests: mechanical engineer, Programmer, engineering and software sales, automation, robotics, aviation, and optics including holographic imaging. 
-            I've worked in varied aspects many time for the same employer. 
-            Willling to learn new things and apply cross domain skills to create solutions that impress the clients. 
-            I part own a construction company with my brother and we've had good times together getting it done with excellence
+    <section class="blue ctrsection">
+        <h1>David Swartwood</h1>
+        <img class="circle" src="/static/Profilecrop.jpg" alt="What David looks like" style="width:200px">
+        <p>A Swarty of all trades</p>
+        <p>I enjoy a varied life of of many interests: mechanical engineer, Programmer, engineering and software sales,
+            automation, robotics, aviation, and optics including holographic imaging.
+            I've worked in varied aspects many time for the same employer.
+            Willling to learn new things and apply cross domain skills to create solutions that impress the clients.
+            I part own a construction company with my brother and we've had good times together getting it done with
+            excellence
         </p>
         <p>
-            Outside of work I enjoy my wife and 2 kids. We do adventures in the snow and and travelling to great outdoor destinations in our kitted out 4runner in the summers.
+            Outside of work I enjoy my wife and 2 kids. We do adventures in the snow and and travelling to great outdoor
+            destinations in our kitted out 4runner in the summers.
         </p>
         <div class="redwav-top">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
-                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
-                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+                    opacity=".25" class="shape-fill"></path>
+                <path
+                    d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+                    opacity=".5" class="shape-fill"></path>
+                <path
+                    d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+                    class="shape-fill"></path>
             </svg>
         </div>
-        </section>
-    
+    </section>
+
     <section class="red">
-        <h1>Hello World</h1>
-        <p>Illo ratione facilis esse veritatis aliquid, hic in molestiae quibusdam. Non eaque nostrum, impedit eos veniam perferendis voluptatum harum, cupiditate eius consequatur eum ex dolore deserunt tenetur quasi pariatur porro!</p>
+        <p class="s2" style="padding-top: 9pt;padding-left: 7pt;text-indent: 0pt;text-align: left;">
+            <span>
+                <a href="https://www.linkedin.com/in/swartwood" class="s4" target="_blank">
+                    <img class="co-icon" alt="image" src="https://media-exp1.licdn.com/dms/image/C4D0BAQGZKGGJ75S72g/company-logo_100_100/0/1629754938156?e=1645056000&v=beta&t=K7PW6JN8-S517fv0cCRwONbVirgI7I2lskRj5TaaI2k" />
+                </a>
+            </span>
+        </p>
+        <h1 style="padding-top: 4pt;padding-left: 7pt;text-indent: 0pt;text-align: left;">Summary</h1>
+        <p style="padding-top: 3pt;padding-left: 7pt;text-indent: 0pt;line-height: 110%;text-align: left;">
+            Currently pursuing an engineering career with an eye out for social change, environmental impact, and
+            leadership opportunities.
+        </p>
+        <h1 style="padding-top: 9pt;padding-left: 7pt;text-indent: 0pt;text-align: left;">
+            Experience
+        </h1>
+        <p class="s2" style="padding-top: 9pt;padding-left: 7pt;text-indent: 0pt;text-align: left;">
+            <span>
+                <img class="co-icon" alt="image" src="https://media-exp1.licdn.com/dms/image/C560BAQESjB1m-kCmkw/company-logo_100_100/0/1545173492677?e=1645056000&v=beta&t=8GYRJhEG5ecu_ttVZyR_dsvfqsNyvFzE0oPd-k0pAeo" />
+            </span>
+            <span class="h2">
+                Co-Owner
+            </span>
+        </p>
+        <p class="s5" style="padding-top: 3pt;padding-left: 29pt;text-indent: 0pt;text-align: left;">
+            Willamette Brothers Construction LLC
+        </p>
+        <p style="padding-top: 2pt;padding-left: 29pt;text-indent: 0pt;text-align: left;">Aug 2018 - Present (2 years 10
+            months +)</p>
+        <p style="text-indent: 0pt;text-align: left;"><br /></p>
+        <p class="s2" style="padding-top: 9pt;padding-left: 7pt;text-indent: 0pt;text-align: left;">
+            <span>
+                <img class="co-icon" alt="image" src="https://media-exp1.licdn.com/dms/image/C4D0BAQHVRSeX0Gl1tw/company-logo_100_100/0/1542300337283?e=1645056000&v=beta&t=25FPY9VLlwx-dWUzbW9GsLMFruALVBpyIHckiRtJw84" />
+            </span> 
+            <span class="h2">
+                Sr mechanical engineer
+            </span>
+        </p>
+        <p class="s5" style="padding-top: 3pt;padding-left: 29pt;text-indent: 0pt;text-align: left;">
+            DWFritz Automation
+        </p>
+        <p style="padding-top: 2pt;padding-left: 29pt;text-indent: 0pt;text-align: left;">
+            Apr 2017 - Aug 2018 (1 year 5 months)
+        </p>
+        <p style="padding-top: 2pt;padding-left: 29pt;text-indent: 0pt;text-align: left;">Worked on the team designing
+            zero-touch optical metrology.</p>
+        <p style="padding-top: 2pt;padding-left: 29pt;text-indent: 0pt;line-height: 122%;text-align: left;">
+            Sourced and designed fixturing and robotics for Tesla battery pack assembly and multiple optical measurement systems.
+        </p>
+        <p style="padding-left: 29pt;text-indent: 0pt;line-height: 11pt;text-align: left;">
+            Designed OSHA compliant enclosure and fail safes.
+        </p>
+        <p style="text-indent: 0pt;text-align: left;">
+            <br />
+        </p>
+        <p class="s2" style="padding-top: 9pt;padding-left: 7pt;text-indent: 0pt;text-align: left;">
+            <span>
+                <img class="co-icon" alt="image" src="https://media-exp1.licdn.com/dms/image/C560BAQHmCZyVa566_Q/company-logo_100_100/0/1519855920157?e=1645056000&v=beta&t=mJzTzrjtghouPw9v-dqtvf4kDftMc-AWxrjPctGYkqw" />
+            </span> 
+            <span class="h2">
+                Sr. Mechanical Engineer
+            </span>
+        </p>
+        <p class="s5" style="padding-left: 29pt;text-indent: 0pt;text-align: left;">Rockwell Collins</p>
+        <p style="padding-top: 2pt;padding-left: 29pt;text-indent: 0pt;text-align: left;">Jul 2010 - Sep 2016 (6 years 3
+            months)</p>
+        <p style="padding-top: 2pt;padding-left: 29pt;text-indent: 0pt;line-height: 122%;text-align: left;">Active in
+            product design from prototype to completion of high value and complex assemblies and designs including the
+            Helmet Mounted Display Systems for F-35, F-15 and F18.</p>
+        <p style="padding-left: 29pt;text-indent: 0pt;line-height: 122%;text-align: left;">Lead engineering design team
+            through requirement process, development, system integration and completion of high precision, optical
+            metrology test equipment.</p>
+        <p style="padding-left: 29pt;text-indent: 0pt;line-height: 122%;text-align: left;">Machine design including NX
+            CAD, FEA, and aided in Zemax in order to build and test injection molded optics.</p>
+        <p style="padding-left: 29pt;text-indent: 0pt;line-height: 11pt;text-align: left;">Optical Design including
+            optical assembly manufacturing, fixturing, and testing.</p>
+        <p style="text-indent: 0pt;text-align: left;"><br /></p>
+        <p class="s2" style="padding-top: 9pt;padding-left: 7pt;text-indent: 0pt;text-align: left;">
+            <span>
+                <img class="co-icon" alt="image" src="https://media-exp1.licdn.com/dms/image/C560BAQE-ck-VrlcKGg/company-logo_100_100/0/1521237425138?e=1645056000&v=beta&t=SkwjX5h-mcRDx6HJnI2ZR0wnfin4rkpzavfmdIlNgJ0" />
+            </span>
+            <span class="h2">
+                Mechanical Engineer - Product Lifecycle Management Specialist
+            </span>
+        </p>
         
-        </section>
-    <section class="pink">
-        <h1>Hello World</h1>
-        <p>Commodi quis vitae veniam iure? Quasi voluptatibus ex illum odio sint, non aperiam praesentium. Et optio voluptas delectus quae eligendi, aspernatur officia, itaque dignissimos incidunt nobis cupiditate quaerat repellendus ducimus.</p>
+        <p class="s5" style="padding-top: 3pt;padding-left: 29pt;text-indent: 0pt;text-align: left;">Siemens PLM</p>
+        <p style="padding-top: 2pt;padding-left: 29pt;text-indent: 0pt;text-align: left;">May 2007 - Feb 2009 (1 year 10
+            months)</p>
+        <p style="padding-top: 2pt;padding-left: 29pt;text-indent: 0pt;text-align: left;">Developed custom technical
+            advice for prospective mechanical engineering NX clients.</p>
+        <p style="padding-top: 2pt;padding-left: 29pt;text-indent: 0pt;line-height: 122%;text-align: left;">Created and
+            delivered product development seminars showing the use of advanced design reuse and PLM.</p>
+        <p style="padding-left: 29pt;text-indent: 0pt;line-height: 122%;text-align: left;">Advised non technical sales
+            staff and clients on technical aspects of products and services. Acted as interface between technical staff
+            and process development teams for several client companies.
+        </p>
+        <p class="s2" style="padding-top: 9pt;padding-left: 7pt;text-indent: 0pt;text-align: left;">
+            <span>
+                <img class="co-icon" alt="image" src="https://media-exp1.licdn.com/dms/image/C4D0BAQHsiK38EEDiMg/company-logo_100_100/0/1519856311357?e=1645056000&v=beta&t=_bAc--7fs2JF1hdKwsOITUuI1-2-4jXEY_4H9tW2HBE" />
+            </span>
+            <span class="h2">
+                Field Engineer
+            </span>
+        </p>        
+        <p class="s5" style="padding-top: 4pt;padding-left: 29pt;text-indent: 0pt;text-align: left;">Schlumberger</p>
+        <p style="padding-top: 3pt;padding-left: 29pt;text-indent: 0pt;text-align: left;">Aug 2006 - Jan 2007 (6 months)
+        </p>
+        <p style="padding-top: 2pt;padding-left: 29pt;text-indent: 0pt;line-height: 122%;text-align: left;">Ran tools to
+            analyze well bore composition and telemetry. Updated driller with critical time sensitive data</p>
+        <p style="padding-top: 2pt;padding-left: 29pt;text-indent: 0pt;line-height: 122%;text-align: left;">Kept real time data available
+            for onshore management</p>
+        <p style="text-indent: 0pt;text-align: left;"><br /></p>
+        <p class="s2" style="padding-top: 9pt;padding-left: 7pt;text-indent: 0pt;text-align: left;">
+            <span>
+                <img class="co-icon" alt="image" src="https://media-exp1.licdn.com/dms/image/C4D0BAQEQBi-tByWgLA/company-logo_100_100/0/1622550222062?e=1645056000&v=beta&t=Xx_mqlc7PiqbCKsKPefoHHi9_y52yM7spZmqiYgSMcw" />
+            </span>
+            <span class="h2">
+                Mechanical Engineer
+            </span>
+        </p>
+        <p class="s5" style="padding-top: 3pt;padding-left: 29pt;text-indent: 0pt;text-align: left;">KONE</p>
+        <p style="padding-top: 3pt;padding-left: 29pt;text-indent: 0pt;text-align: left;">Mar 2006 - Aug 2006 (6 months)
+        </p>
+        <p style="padding-top: 2pt;padding-left: 29pt;text-indent: 0pt;text-align: left;">Worked alongside architects
+            and contractors to design custom elevators.</p>
+        <p style="padding-top: 2pt;padding-left: 29pt;text-indent: 0pt;text-align: left;">Listed full bill of materials
+            for all mechanical and structural parts of elevator and hoist way.</p>
+        <p style="padding-top: 2pt;padding-left: 29pt;text-indent: 0pt;text-align: left;">Worked with
+                installers to resolve issues that develop at the build site.</span></p>
+        <p style="text-indent: 0pt;text-align: left;"><br /></p>
+        <p class="s2" style="padding-top: 9pt;padding-left: 7pt;text-indent: 0pt;text-align: left;">
+            <span>
+                <img class="co-icon" alt="image" src="https://media-exp1.licdn.com/dms/image/C4E0BAQEvplZGXaoq6g/company-logo_100_100/0/1565612855061?e=1645056000&v=beta&t=P5bW81sz7N2qmkWgkYNAf1DYOxxZVupK4dS77iw4r5o" />
+            </span>
+            <span class="h2">
+                Mechanical Engineer
+            </span>
+        </p>
+        <p class="s5" style="padding-top: 3pt;padding-left: 29pt;text-indent: 0pt;text-align: left;">L-3 Communication
+            Integrated Systems</p>
+        <p style="padding-top: 2pt;padding-left: 29pt;text-indent: 0pt;text-align: left;">Jan 2005 - Mar 2006 (1 year 3
+            months)</p>
+        <p style="padding-top: 2pt;padding-left: 29pt;text-indent: 0pt;line-height: 122%;text-align: left;">Designed
+            interior layouts and consoles for USAF aircraft command center. Designed using Unigraphics NX.</p>
+        <p style="padding-left: 29pt;text-indent: 0pt;line-height: 11pt;text-align: left;">Worked with a large team to
+            complete major designs and configuration of entire aircraft.</p>
+        <p style="text-indent: 0pt;text-align: left;"><br /></p>
+        <h1 style="padding-top: 4pt;padding-left: 9pt;text-indent: 0pt;text-align: left;">Education</h1>
+        <p class="s2" style="padding-top: 7pt;padding-left: 8pt;text-indent: 0pt;line-height: 18pt;text-align: left;">
+            <span>
+                <img class="co-icon" alt="image" src="https://media-exp1.licdn.com/dms/image/C4E0BAQHkXEd556X81g/company-logo_100_100/0/1570575585691?e=1645056000&v=beta&t=vmpm7I4yA80j9iOeJDvBnwX81Hvg87pZNGymz7YHmVY" />
+            </span>
+            <span class="h2">
+                Naveen Jindal School of Management, UT Dallas
+            </span>
+        </p>
+        <p class="s5" style="padding-left: 31pt;text-indent: 0pt;line-height: 14pt;text-align: left;">Master of Business
+            Administration (MBA), Project Management</p>
+        <p style="padding-top: 3pt;padding-left: 31pt;text-indent: 0pt;text-align: left;">2016 - 2018</p>
+        
+        <p style="padding-top: 2pt;padding-left: 31pt;text-indent: 0pt;text-align: left;">Project Management focused MBA
+            program accredited by the PMI Institute</p>
+        <p style="text-indent: 0pt;text-align: left;"><br /></p>
+        <p class="s2" style="padding-top: 7pt;padding-left: 8pt;text-indent: 0pt;line-height: 18pt;text-align: left;">
+            <span>
+                <img class="co-icon" alt="image" src="https://media-exp1.licdn.com/dms/image/C4E0BAQGrCLDBTVSazw/company-logo_200_200/0/1612990397322?e=1645056000&v=beta&t=rHSP6LBDhoYeUOIts0DYx3pF0RkVo3BUtbWQAKR7zWI" />
+            </span>
+            <span class="h2">New Mexico
+                State University </span>
+        </p>
+        <p class="s5" style="padding-left: 31pt;text-indent: 0pt;line-height: 14pt;text-align: left;">B.S, Mechanical Engineering </p>
+        <p style="padding-top: 3pt;padding-left: 31pt;text-indent: 0pt;text-align: left;">1998 - 2004</p>
+        <p style="text-indent: 0pt;text-align: left;"><br /></p>
+        <h1 style="padding-left: 8pt;text-indent: 0pt;text-align: left;">Skills</h1>
+        <p style="text-indent: 0pt;text-align: left;"><br /></p>
+        <p style="padding-left: 16pt;text-indent: 0pt;line-height: 107%;text-align: left;">Project Management<span
+                class="s6">, </span>Engineering Management<span class="s6">, </span>Product Lifecycle Management<span
+                class="s6">, </span>Program Management<span class="s6">, </span>Engineering<span class="s6">,
+            </span>Leadership<span class="s6">, </span>Lead Engineering, Requirements Management, CAD - Unigraphics/NX,
+            SolidWorks; Testing, Automation, Optical Assemblies, GD&amp;T, FEA, High Speed Metrology, Statistics,</p>
+        <p style="padding-top: 1pt;padding-left: 16pt;text-indent: 0pt;text-align: left;">Design for Manufacturing,
+            Clean Rooms, Mechatronics, Robotics</p>
     </section>
-    <section class="dark">
-        <h1>Hello World</h1>
-        <p>Iusto reprehenderit consectetur officia ad ipsum nobis sit voluptatem ipsam officiis quis pariatur ea aut velit, nemo vel doloremque, a itaque saepe labore consequuntur. Ipsa quibusdam laborum beatae earum sapiente?</p>
-    </section>
-    <section class="blue">
-        <h1>Hello World</h1>
-        <p>Numquam quisquam animi labore. Voluptatum, repellendus deserunt delectus deleniti placeat saepe facilis! Debitis provident repellendus corrupti consequuntur sed quas odit, facilis quis ratione alias adipisci perferendis. Unde fuga quaerat soluta.</p>
-    </section>
-    <section class="red">
-        <h1>Hello World</h1>
-        <p>Nulla commodi fugiat natus facere aperiam ut quas illo explicabo quis debitis ab, nostrum modi eveniet et aut est consequatur voluptate totam quaerat. Dolor libero vitae, dolorum facilis dolores ratione?</p>
-    </section>
-    <section class="pink">
-        <h1>Hello World</h1>
-        <p>Tempore, commodi praesentium sapiente debitis, quis ex quidem totam hic exercitationem aliquam voluptatem necessitatibus, dolor excepturi optio! Quae harum amet aspernatur ad, delectus, velit nobis laudantium eum eligendi nesciunt doloribus.</p>
-    </section>
-    <section class="dark">
-        <h1>Hello World</h1>
-        <p>Sit perferendis labore porro magnam nemo ipsa. Inventore molestiae corrupti temporibus, quibusdam eum voluptas quas ullam voluptates. Dolores, consequuntur. Ipsa, ipsam aliquid odit placeat similique quaerat deserunt a voluptatem ut.</p>
-    </section>
+    
+    
+    
+
 </body>
+<footer class="red">
+
+</footer>
 </html>
