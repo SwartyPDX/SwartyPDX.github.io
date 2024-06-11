@@ -138,7 +138,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .wbc-section,.wbc-code{margin-top:16px!important;margin-bottom:16px!important}
 .wbc-margin{margin:16px!important}.wbc-margin-top{margin-top:16px!important}.wbc-margin-bottom{margin-bottom:16px!important}
 .wbc-margin-left{margin-left:16px!important}.wbc-margin-right{margin-right:16px!important}
-.wbc-padding-small{padding:4px 8px!important}.wbc-padding{padding:8px 16px!important}.wbc-padding-large{padding:12px 24px!important}
+.wbc-padding-small{padding:4px 8px!important}.wbc-padding{padding:8px 16px!important}.wbc-padding-large{padding:12px 24px!important}.wbc-padding-logo{padding:100px!important}
 .wbc-padding-16{padding-top:16px!important;padding-bottom:16px!important}.wbc-padding-24{padding-top:24px!important;padding-bottom:24px!important}
 .wbc-padding-32{padding-top:32px!important;padding-bottom:32px!important}.wbc-padding-48{padding-top:48px!important;padding-bottom:48px!important}
 .wbc-padding-64{padding-top:64px!important;padding-bottom:64px!important}
@@ -149,7 +149,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .wbc-transparent,.wbc-hover-none:hover{background-color:transparent!important}
 .wbc-hover-none:hover{box-shadow:none!important}
 /* Colors */
-.wbc-amber,.wbc-hover-amber:hover{color:#000!important;background-color:#ffc107!important}
+.wbc-amber,.wbc-hover-amber:hover{color:#000!important;background-color:#ffa400!important}
 .wbc-aqua,.wbc-hover-aqua:hover{color:#000!important;background-color:#00ffff!important}
 .wbc-blue,.wbc-hover-blue:hover{color:#fff!important;background-color:#2196F3!important}
 .wbc-light-blue,.wbc-hover-light-blue:hover{color:#000!important;background-color:#87CEEB!important}
