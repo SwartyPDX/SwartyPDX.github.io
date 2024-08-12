@@ -7,23 +7,18 @@ import matplotlib.pyplot as plt
 
 #Load Data
 churn = pd.read_csv('D206\churn\churn_raw_data.csv')
-print(churn.head())
+#print(churn.head())
 
 #duplicate
 numunique=churn.nunique()
+
 numduplicates=churn.value_counts("CaseOrder")
 #ChurnDuplicates = churn.duplicated()
 
 print(numduplicates)
 print(numunique)
 
-
-
-
 #missing - null, NA and ""
-
-churn = pd.read_csv('churn_raw_data.csv')
-churn.head()
 msno.bar(churn)
 msno.matrix(churn, labels= True)
 #plt.show()
