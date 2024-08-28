@@ -16,16 +16,12 @@ file=open("D206/churn/quantitative_vars.csv", "r")
 quantvars=list(csv.reader(file, delimiter=","))[0]
 file.close
 quantChurn=churnClean.filter(quantvars)
-#remove rows with negative values
+#remove rows with negative and NA values in quantative columns
 for i, col in enumerate(quantChurn):  
     churnClean=churnClean.drop(churnClean.index[quantChurn[col]<0])
     quantChurn=churnClean.filter(quantvars)
-
-
-
-
-
-
+    
+churnClean=churnClean.dropna(subset=quantvars)
 
 
 print(churnClean.info(verbose=False))
