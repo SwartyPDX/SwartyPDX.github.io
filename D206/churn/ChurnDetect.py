@@ -11,7 +11,7 @@ import csv
 #Load Data
 churn = pd.read_csv('D206/churn/churn_raw_data.csv')
 
-#Load the list of quantitative varibles
+#Load the list of quantitative varibles and create quantative only dataframe
 file = open("D206/churn/quantitative_vars.csv", "r")
 quantvars = list(csv.reader(file, delimiter=","))[0]
 file.close
@@ -42,28 +42,26 @@ msno.heatmap(churn, figsize=(25, 20))
 plt.title('Heatmap Chart')
 pp.savefig()  # saves the current figure into a pdf page
 
+#Output basic statistics of Quantitative data
+quantChurn.describe().to_csv('D206/churn/quantitativedetails.csv')
 
+#Find outliers and observe distrubution of quantitative data
 
-
-#Finding outliers and observing distrubution for anomalies
-fig, axes = plt.subplots(2, len(quantvars), figsize=(25, 20))
-plt.subplots_adjust(left=0.1, right=0.9, bottom=0.1, top=0.9, wspace=0.9, hspace=0.25)
 for i, col in enumerate(quantvars):
+    fig, axes = plt.subplots(1, 2, figsize=(25, 10))
+    plt.subplots_adjust(left=0.1, right=0.9, bottom=0.1, top=0.9, wspace=0.1, hspace=0.1)
     #Create subplot and use 1.5*IQR for outliers
-    ax = sns.boxplot(y=quantChurn[col], ax=axes.flatten()[i])
+    ax = sns.boxplot(y=quantChurn[col], ax=axes.flatten()[0])
     #Set Plot min and max
     ax.set_ylim(quantChurn[col].min()-quantChurn[col].max()*0.1, quantChurn[col].max()*1.1)
     #labels
     ax.set_ylabel("")
     ax.set_xlabel(col + '\n1.5 X IQR')
-    #rotate to fit large numbers on axis
-    if (quantChurn[col].max() > 999):
-        ax.tick_params(axis='y', rotation=70)
-for i, col in enumerate(quantvars):
-    #Create subplot of histogram
-    ax = sns.histplot(quantChurn[col], ax=axes.flatten()[i+len(quantvars)])
-pp.savefig()  # saves the current figure into a pdf page
+    #create distribution plot
+    ax = sns.histplot(quantChurn[col], ax=axes.flatten()[1])
+    pp.savefig()  # saves the current figure into a pdf page
 pp.close()
+plt.close
 
 
 
