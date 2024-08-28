@@ -6,13 +6,20 @@ import seaborn as sns
 import csv
 
 #Load Data
-churn_clean = pd.read_csv('D206/churn/churn_raw_data.csv')
+churnClean = pd.read_csv('D206/churn/churn_raw_data.csv')
 #Remove rows with more than 'n' missing variables
 n=2
-churn_clean=churn_clean.dropna(thresh=(len(churn_clean.columns)-n))
-
-#Treatment for outliers
+churnClean=churnClean.dropna(thresh=(len(churnClean.columns)-n))
+print(churnClean.info(verbose=False))
+#Treatment for outliers in quantitative values
+file=open("D206/churn/quantitative_vars.csv", "r")
+quantvars=list(csv.reader(file, delimiter=","))[0]
+file.close
+quantChurn=churnClean.filter(quantvars)
 #remove rows with negative values
+for i, col in enumerate(quantChurn):  
+    churnClean=churnClean.drop(churnClean.index[quantChurn[col]<0])
+    quantChurn=churnClean.filter(quantvars)
 
 
 
@@ -21,5 +28,5 @@ churn_clean=churn_clean.dropna(thresh=(len(churn_clean.columns)-n))
 
 
 
-print(churn_clean.info(verbose=False))
-churn_clean.to_csv('D206/churn/churn_clean.csv', index=False)
+print(churnClean.info(verbose=False))
+churnClean.to_csv('D206/churn/churn_clean.csv', index=False)
