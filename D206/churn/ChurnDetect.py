@@ -17,7 +17,7 @@ quantvars = list(csv.reader(file, delimiter=","))[0]
 file.close
 quantChurn= churn.filter(quantvars)
 
-pp = PdfPages('D206/churn/Churn_detect.pdf')
+pp = PdfPages('D206/churn/ChurnDetect.pdf')
 #find duplicates
 numunique=churn.nunique()
 
@@ -61,7 +61,7 @@ for i, col in enumerate(quantvars):
     ax = sns.histplot(quantChurn[col], ax=axes.flatten()[1])
     pp.savefig()  # saves the current figure into a pdf page
 pp.close()
-plt.close
+plt.close()
 
 
 
