@@ -45,7 +45,7 @@ pp.savefig()  # saves the current figure into a pdf page
 #Output basic statistics of Quantitative data
 quantChurn.describe().to_csv('D206/churn/quantitativedetails.csv')
 
-#Find outliers and observe distrubution of quantitative data
+#Find outliers and observe distrubution of quantitative data [In-Text Citation: (seaborn, n.d.)] 
 
 for i, col in enumerate(quantvars):
     fig, axes = plt.subplots(1, 2, figsize=(25, 10))
