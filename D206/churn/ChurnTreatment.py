@@ -5,25 +5,35 @@ from matplotlib.backends.backend_pdf import PdfPages
 import seaborn as sns
 import csv
 
-#Load Data
-churnClean = pd.read_csv('D206/churn/churn_raw_data.csv')
+#Load Data with NaN dictionary to keep "none" option
+NaNdict = ["", "#N/A", "#N/A N/A", "#NA", "-1.#IND", "-1.#QNAN", "-NaN", "-nan", "1.#IND", "1.#QNAN","<NA>", "N/A", "NA", "NULL", "NaN", "n/a", "nan", "null"]
+churnClean = pd.read_csv('D206/churn/churn_raw_data.csv', keep_default_na=False, na_values=NaNdict)
+
 
 #Remove rows with NA
 churnClean=churnClean.dropna()
 print(churnClean.info(verbose=False))
+
+
+
+
 #Treatment for outliers in quantitative values
 file=open("D206/churn/quantitative_vars.csv", "r")
 quantvars=list(csv.reader(file, delimiter=","))[0]
 file.close
 quantChurn=churnClean.filter(quantvars)
+
+#Remove rows with NA
+churnClean=churnClean.dropna()
+print(churnClean.info(verbose=False))
+
+
 #remove rows with negative values in quantative columns
 for i, col in enumerate(quantChurn):  
     churnClean=churnClean.drop(churnClean.index[quantChurn[col]<0])
     quantChurn=churnClean.filter(quantvars)
     
-# remove derivitive and inacurate columns
-removeCol=['City','State','County','Zip','Population','Area','Timezone']
-churnClean=churnClean.drop(removeCol, axis=1)
+
 
 print(churnClean.info(verbose=False))
 churnClean.to_csv('D206/churn/churn_clean.csv', index=False)
@@ -34,7 +44,7 @@ numunique=churnClean.nunique()
 numduplicates=churnClean.value_counts('CaseOrder')
 print(numduplicates)
 print(numunique)
-with PdfPages('D206/churn/ChurnTreated.pdf') as pp:
+with PdfPages('D206/churn/Output/ChurnTreated.pdf') as pp:
     msno.bar(churnClean, figsize=(25, 20))
     plt.title('Bar Chart')
     pp.savefig()

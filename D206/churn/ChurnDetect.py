@@ -8,8 +8,9 @@ from matplotlib.backends.backend_pdf import PdfPages
 import seaborn as sns
 import csv
 
-#Load Data
-churn = pd.read_csv('D206/churn/churn_raw_data.csv')
+#Load Data with NaN dictionary to keep "none" option
+NaNdict = ["", "#N/A", "#N/A N/A", "#NA", "-1.#IND", "-1.#QNAN", "-NaN", "-nan", "1.#IND", "1.#QNAN","<NA>", "N/A", "NA", "NULL", "NaN", "n/a", "nan", "null"]
+churn = pd.read_csv('D206/churn/churn_raw_data.csv', keep_default_na=False, na_values=NaNdict)
 
 #Load the list of quantitative varibles and create quantative only dataframe
 file = open("D206/churn/quantitative_vars.csv", "r")
@@ -17,7 +18,7 @@ quantvars = list(csv.reader(file, delimiter=","))[0]
 file.close
 quantChurn= churn.filter(quantvars)
 
-pp = PdfPages('D206/churn/ChurnDetect.pdf')
+pp = PdfPages('D206/churn/Output/ChurnDetect.pdf')
 #find duplicates
 numunique=churn.nunique()
 
@@ -26,7 +27,6 @@ numduplicates=churn.value_counts('CaseOrder')
 
 print(numduplicates)
 print(numunique)
-
 
 
 #find missing - null, NA and ""
@@ -43,7 +43,7 @@ plt.title('Heatmap Chart')
 pp.savefig()  # saves the current figure into a pdf page
 
 #Output basic statistics of Quantitative data
-quantChurn.describe().to_csv('D206/churn/quantitativedetails.csv')
+quantChurn.describe().to_csv('D206/churn/Output/quantitativedetails.csv')
 
 #Find outliers and observe distrubution of quantitative data [In-Text Citation: (seaborn, n.d.)] 
 
