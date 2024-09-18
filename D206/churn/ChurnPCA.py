@@ -51,5 +51,4 @@ with PdfPages('D206/churn/Output/ChurnPCA.pdf') as pp:
     plt.xlabel('Principal Component')
     plt.ylabel('Proportion of Variance Explained')
     pp.savefig()
-    pp.close
 plt.show()
