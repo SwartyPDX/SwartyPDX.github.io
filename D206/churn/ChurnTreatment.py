@@ -38,6 +38,11 @@ quantChurnfit[Wholevaluecol]=quantChurnfit[Wholevaluecol].round()
 quantChurn=quantChurnfit.round(2)
 churnClean[quantvars]=quantChurn[quantvars].values
 
+# Fill in missing qualitative values
+for column in churnClean.columns:
+    churnClean[column].fillna(churnClean[column].mode()[0], inplace=True)
+
+
 
 
 print(quantChurn.isna().any())
@@ -65,4 +70,3 @@ with PdfPages('D206/churn/Output/ChurnTreated.pdf') as pp:
         ax = sns.histplot(quantchurnorig[col], ax=axes.flatten()[0])
         ax = sns.histplot(quantChurn[col], ax=axes.flatten()[1])
         pp.savefig()
-

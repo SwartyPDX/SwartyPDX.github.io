@@ -13,7 +13,7 @@ churn = pd.read_csv('D206/churn/churn_clean.csv', keep_default_na=False, na_valu
 
 
 scalar=StandardScaler()
-pca=PCA(n_components=.7, svd_solver='full')
+pca=PCA(n_components=10, svd_solver='full')
 
 
 #narrow to quantitative data
