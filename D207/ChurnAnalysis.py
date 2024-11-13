@@ -4,8 +4,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_pdf import PdfPages
 import seaborn as sns
-import csv
 from scipy.stats import f_oneway
+from scipy.stats import pearsonr
+from scipy.stats import cramervonmises_2samp as cv2s
+
 
 np.set_printoptions(legacy='1.25')
 
@@ -57,4 +59,36 @@ with PdfPages('D207/Output/D207.pdf') as pp:
         ax.text(ax.get_xlim()[0], ax.get_ylim()[1], qual[col].describe().round(2), fontsize=15, verticalalignment='top')
         pp.savefig()
 
-#Code for Rubric D1 and D2
+#Code for Rubric D1
+    quantvars2=["Population", "Outage_sec_perweek"]
+    x1 ,y1=[quantvars2[0],quantvars2[1]]
+    quant=churn.filter(quantvars2)
+    Pearson= pearsonr(quant[x1], quant[y1])
+    fig, axes = plt.subplots(1, 1, figsize=(25,25))
+    fig.suptitle(x1+' vs '+y1, fontsize=14, fontweight='bold')
+    fig.text(0.5, 0.9, str(Pearson), size = 20, horizontalalignment='center', verticalalignment='top')
+    ax = sns.scatterplot(quant,x=x1,y=y1)
+    plt.subplots_adjust(left=0.1, right=0.9, bottom=0.1, top=0.9, wspace=0.1, hspace=0.1)
+    pp.savefig()
+#Code for Rubric D2
+    qualvars2=["Marital", "Children"]
+    x1 ,y1=[qualvars2[0],qualvars2[1]]
+    qual=churn.filter(qualvars2)
+    cramerv= cv2s(qual[x1].apply(str), qual[y1].apply(str))
+    fig, axes = plt.subplots(1, 1, figsize=(25,25))
+    fig.suptitle(x1+' vs '+y1, fontsize=14, fontweight='bold')
+    fig.text(0.5, 0.95, str(cramerv), size = 20, horizontalalignment='center', verticalalignment='top')
+    ax = sns.histplot(qual,x=x1,hue=y1, multiple="stack", palette="winter")
+    plt.subplots_adjust(left=0.1, right=0.9, bottom=0.1, top=0.9, wspace=0.1, hspace=0.1)
+    pp.savefig()
+
+"""
+g = sns.catplot(
+    data=penguins, kind="bar",
+    x="species", y="body_mass_g", hue="sex",
+    errorbar="sd", palette="dark", alpha=.6, height=6
+)
+g.despine(left=True)
+g.set_axis_labels("", "Body mass (g)")
+g.legend.set_title("")
+"""
