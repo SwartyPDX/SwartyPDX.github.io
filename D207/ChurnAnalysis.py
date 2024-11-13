@@ -4,6 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_pdf import PdfPages
 import seaborn as sns
+from seaborn import objects as so
 from scipy.stats import f_oneway
 from scipy.stats import pearsonr
 from scipy.stats import cramervonmises_2samp as cv2s
@@ -73,7 +74,10 @@ with PdfPages('D207/Output/D207.pdf') as pp:
 #Code for Rubric D2
     qualvars2=["Marital", "Children"]
     x1 ,y1=[qualvars2[0],qualvars2[1]]
-    qual=churn.filter(qualvars2)
+    qual=churn.filter(qualvars2).astype("category")
+    qual[x1]=qual[x1].cat.reorder_categories(['Married', 'Never Married', 'Separated', 'Widowed', 'Divorced'], ordered=True)
+    qual[y1]=qual[y1].cat.reorder_categories([10,9,8,7,6,5,4,3,2,1,0], ordered=True)
+    print(qual[y1].value_counts(ascending=False).index)
     cramerv= cv2s(qual[x1].apply(str), qual[y1].apply(str))
     fig, axes = plt.subplots(1, 1, figsize=(25,25))
     fig.suptitle(x1+' vs '+y1, fontsize=14, fontweight='bold')
@@ -81,14 +85,3 @@ with PdfPages('D207/Output/D207.pdf') as pp:
     ax = sns.histplot(qual,x=x1,hue=y1, multiple="stack", palette="winter")
     plt.subplots_adjust(left=0.1, right=0.9, bottom=0.1, top=0.9, wspace=0.1, hspace=0.1)
     pp.savefig()
-
-"""
-g = sns.catplot(
-    data=penguins, kind="bar",
-    x="species", y="body_mass_g", hue="sex",
-    errorbar="sd", palette="dark", alpha=.6, height=6
-)
-g.despine(left=True)
-g.set_axis_labels("", "Body mass (g)")
-g.legend.set_title("")
-"""
