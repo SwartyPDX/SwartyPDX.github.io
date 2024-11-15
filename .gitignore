@@ -131,3 +131,4 @@ dmypy.json
 scrap.py
 D206.zip
 Output/
+.fake
