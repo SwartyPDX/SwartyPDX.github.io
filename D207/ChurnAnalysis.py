@@ -17,15 +17,23 @@ churn = pd.read_csv('D207/churn_clean.csv')
 #Code for Rubric B1
 #Get Columns by type
 age_pay=churn.groupby("PaymentMethod")["Age"].apply(list)
-print(age_pay)
+
 
 #Run Initial Analysis
 with PdfPages('D207/Output/D207.pdf') as pp:
+    x0, y0=["Age", "PaymentMethod"]
     plt.style.use('fivethirtyeight')
     anova=f_oneway(age_pay.iloc[0],age_pay.iloc[1],age_pay.iloc[2],age_pay.iloc[3])
-    print(type(anova))
-    fig = plt.figure(figsize=(25, 0.75))
-    fig.text(0.5, 0.3, 'ANOVA output for coorelation of payment method and customer age:\n' + str(anova), size = 12, horizontalalignment='center', verticalalignment='center')
+    fig, ax = plt.subplots(figsize=(25, 10))
+    plt.subplots_adjust(left=0.15, right=0.95, bottom=0.1, top=0.9, wspace=0, hspace=0)
+    ax.margins(1,.1)
+    ax = sns.boxplot(churn, x=x0, y=y0)
+    ax.set_xlabel(x0 + '\n1.5 X IQR')
+    ax.set_ylabel("")
+    ax.set_xlim(churn[x0].min()-churn[x0].max()*0.1, churn[x0].max()*1.1)
+    sns.despine(trim=True, left=True)
+    #sns.stripplot(churn, x=x0, y=y0, size=4, color=".3")
+    fig.text(0.5, 0.95, 'ANOVA output for coorelation of payment method and customer age:\n' + str(anova), size = 12, horizontalalignment='center', verticalalignment='top')
     pp.savefig()
     
 #Code for Rubric C part 1
@@ -77,7 +85,6 @@ with PdfPages('D207/Output/D207.pdf') as pp:
     qual=churn.filter(qualvars2).astype("category")
     qual[x1]=qual[x1].cat.reorder_categories(['Married', 'Never Married', 'Separated', 'Widowed', 'Divorced'], ordered=True)
     qual[y1]=qual[y1].cat.reorder_categories([10,9,8,7,6,5,4,3,2,1,0], ordered=True)
-    print(qual[y1].value_counts(ascending=False).index)
     cramerv= cv2s(qual[x1].apply(str), qual[y1].apply(str))
     fig, axes = plt.subplots(1, 1, figsize=(25,25))
     fig.suptitle(x1+' vs '+y1, fontsize=14, fontweight='bold')
